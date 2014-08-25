@@ -1,0 +1,22 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li><a ng-href="#">Home</a></li>
+        <li class="active"><a ng-href="#/login">Login</a></li>
+    </ul>
+    <h3 class="text-muted">afterYouEms</h3>
+</div>
+
+<form ng-controller="LoginCtrl">
+    Username:<input name="username" ng-model="username" placeholder="Enter your username">
+    <br>
+    Password:<input name="password" ng-model="password" placeholder="password">
+    <div
+            vc-recaptcha
+            tabindex="3"
+            theme="clean"
+            key="model.key"
+            ></div>
+
+    <!-- Call a method in the scope of your controller to handle data submit -->
+    <button class="btn" ng-click="submit()">Submit</button>
+</form>
