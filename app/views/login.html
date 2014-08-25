@@ -1,27 +1,18 @@
-<div class="header">
-    <ul class="nav nav-pills pull-right">
-        <li><a ng-href="#">Home</a></li>
-        <li class="active"><a ng-href="#/login">Login</a></li>
-    </ul>
-    <h3 class="text-muted">afterYouEms</h3>
-</div>
-<!--<div class="header">
-    <ul class="nav nav-pills pull-right">
-        <li><a ui-sref="main">Home</a></li>
-        <li class="active"><a ui-sref="login">Login</a></li>
-    </ul>
-    <h3 class="text-muted">afterYouEms</h3>
-</div>-->
-
 <div ng-controller="LoginCtrl">
+    <form name="loginForm" novalidate ng-submit="loginForm()">
+        <label>Email:</label><input name="email" type="email" ng-model="user.email" required>
+        <div class="error-container" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
+            <small class="error" ng-show="loginForm.email.$error.required">Email required</small>
+            <small class="error" ng-show="loginForm.email.$error.email">Invalid email</small>
+        </div>
 
-<form name="form" >
-    E-mail:<input type="email" name="email" ng-model="email" placeholder="Enter email" required>
-    <br>
-    Password:<input name="password" ng-model="password" placeholder="Enter password" required>
-    <br>
-    <div re-captcha ng-model="user.captcha"></div>
-    <br>
-    <button ng-click="submit()">Submit</button>
-</form>
+        <label>Password:</label><input name="password" type="password" ng-model="user.password" required>
+        <div class="error-container" ng-show="loginForm.password.$dirty && loginForm.password.$invalid">
+            <small class="error" ng-show="loginForm.password.$error.required">Password required</small>
+        </div>
+
+        <div re-captcha name="captcha" ng-model="user.captcha"></div>
+
+        <button ng-disabled="loginForm.$invalid" type="submit">Submit</button>
+    </form>
 </div>

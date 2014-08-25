@@ -11,12 +11,5 @@ angular.module('afterYouEmsApp')
     })
 
     .controller('LoginCtrl', function ($scope, reCAPTCHA) {
-        $scope.email = "";
-        $scope.password = "";
-        $scope.register = function () {
-            if ($scope.registerForm.$valid) {
-                $scope.showdialog = true;
-                console.log('Form is valid');
-            }
-        }
+        $scope.user={email:"", password:"", captcha:""};
     });

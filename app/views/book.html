@@ -1,0 +1,23 @@
+Book here or <a ng-href="#/login">login</a> now
+<div ng-controller="BookCtrl">
+    <form name="bookForm" novalidate ng-submit="bookForm()">
+        <label>Email:</label><input name="email" type="email" ng-model="user.email" required>
+        <div class="error-container" ng-show="bookForm.email.$dirty && bookForm.email.$invalid">
+            <small class="error" ng-show="bookForm.email.$error.required">Email required</small>
+            <small class="error" ng-show="bookForm.email.$error.email">Invalid email</small>
+        </div>
+
+        <label>Address:</label><textarea name="address" ng-model="booking.address" required></textarea>
+        <div class="error-container" ng-show="bookForm.address.$dirty && bookForm.address.$invalid">
+            <small class="error" ng-show="bookForm.address.$error.required">Address required</small>
+        </div>
+
+        <label>Contact:</label><input name="contact" type="text" ng-model="booking.contact"  ng-pattern="/^(9|8|6)\d{7}$/   "required>
+        <div class="error-container" ng-show="bookForm.contact.$dirty && bookForm.contact.$invalid">
+            <small class="error" ng-show="bookForm.contact.$error.required">Contact required</small>
+            <small class="error" ng-show="bookForm.contact.$error.pattern">Invalid contact</small>
+        </div>
+
+        <button ng-disabled="bookForm.$invalid" type="submit">Submit</button>
+    </form>
+</div>
