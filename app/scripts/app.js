@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name afterYouEmsApp
- * @description
- * # afterYouEmsApp
- *
- * Main module of the application.
- */
 angular
   .module('afterYouEmsApp', [
     'ngAnimate',
@@ -23,9 +15,9 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
       .otherwise({
         redirectTo: '/'
