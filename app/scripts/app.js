@@ -1,13 +1,15 @@
 'use strict';
 
-angular
+var app = angular
   .module('afterYouEmsApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'reCAPTCHA'
+
   ])
   .config(function ($routeProvider) {
     $routeProvider

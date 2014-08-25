@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('afterYouEmsApp',['vcRecaptcha'] )
+angular.module('afterYouEmsApp')
     .controller('LoginCtrl', function ($scope) {
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
